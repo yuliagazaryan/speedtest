@@ -57,7 +57,9 @@ class App extends Component {
                 key={c.id}
                 color={c.color}
                 id={c.id}
-                click={this.clickHandler}/>
+                click={this.clickHandler}
+                active={this.state.current === c.id}
+                />
                 ))}
                 </div>
             <div id="buttons">

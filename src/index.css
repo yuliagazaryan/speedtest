@@ -88,3 +88,8 @@ p {
   font-size: 50px;
   font-family: "Road Rage";
 }
+
+.active {
+  box-shadow: 0 0 5px snow;
+  background-color: yellow;
+}
