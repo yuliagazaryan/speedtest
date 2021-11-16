@@ -3,6 +3,15 @@ import Circle from './Circle';
 import Gameover from './Gameover';
 import { circles } from './circles';
 
+import startSound from "./assets/gameStartSound.mp3"
+import clickSound from "./assets/rightClickSound.ogg"
+import endSound from "./assets/gameEndSound.mp3"
+
+let gameStartSound = new Audio(startSound);
+let rightClickSound = new Audio(clickSound);
+let gameEndSound = new Audio(endSound);
+
+
 const getRndInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   };
@@ -19,7 +28,16 @@ class App extends Component {
 
      timer = undefined;
 
+     clickPlay = () => {
+         if (clickSound.pause) {
+             clickSound.play();
+         } else {
+             clickSound.currentTime = 0;
+         }
+     }
+
      clickHandler = (id) => {
+         rightClickSound.play();
          console.log("you clicked: ", id);
 
          if (this.state.current !== id) {
@@ -28,7 +46,7 @@ class App extends Component {
          }
 
          this.setState({
-             score: this.state.score + 10,
+             score: this.state.score + 1,
              rounds: 0,
          });
      }
@@ -54,10 +72,11 @@ class App extends Component {
         this.timer = setTimeout(this.nextCircle, this.state.pace);
 
         console.log("active circle is", this.state.current);
-        console.log("round number: ", this.state.round);
+        console.log("round number: ", this.state.rounds);
      };
 
      startHandler = () => {
+         gameStartSound.play();
         this.nextCircle();
         this.setState({
             gameStart: true,
@@ -65,6 +84,8 @@ class App extends Component {
      };
 
      stopHandler = () => {
+         gameStartSound.pause();
+         gameEndSound.play();
         clearTimeout(this.timer);
 
         this.setState({
@@ -101,6 +122,7 @@ class App extends Component {
                 id={c.id}
                 click={() => this.clickHandler(c.id)}
                 active={this.state.current === c.id}
+                disabled={this.state.gameStart}
                 />
                 ))}
                 </div>
@@ -108,6 +130,8 @@ class App extends Component {
                 <button disabled={this.state.gameStart} onClick={this.startHandler}>Start</button>
                 <button onClick={this.stopHandler}>Stop</button>
             </div>
+            <div className="girl">
+                </div>
             </div>
         );
     }
