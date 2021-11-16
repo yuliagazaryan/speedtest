@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url("chopsticks.png"), auto;
 }
 
 code {
@@ -13,18 +14,13 @@ code {
 }
 
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(137, 137, 226, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background-color: #c8d6af;
 }
 
 h1 {
-  font-family: "Permanent Marker", cursive;
   text-align: center;
   font-size: 55px;
+  text-transform: uppercase;
 }
 
 p {
@@ -92,4 +88,49 @@ p {
 .active {
   box-shadow: 0 0 5px snow;
   background-color: yellow;
+  background-image: url("sushi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80px;
+}
+
+#container {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  position: fixed;
+  z-index: 9999;
+  background: rgba(31, 14, 7, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameover {
+  background-color: white;
+  width: 700px;
+  height: 350px;
+  box-sizing: border-box;
+  padding: 50px;
+  border-radius: 40px;
+  position: relative;
+}
+
+#gameover h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+#gameover button {
+  position: relative;
+  bottom: 208px;
+  left: 565px;
+  font-size: 20px;
+  padding: 10px 15px;
+  background-color: rgb(240, 86, 86);
+  border: none;
+  color: white;
 }
