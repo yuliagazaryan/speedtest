@@ -28,17 +28,9 @@ class App extends Component {
 
      timer = undefined;
 
-     clickPlay = () => {
-         if (clickSound.pause) {
-             clickSound.play();
-         } else {
-             clickSound.currentTime = 0;
-         }
-     }
-
      clickHandler = (id) => {
-         rightClickSound.play();
-         console.log("you clicked: ", id);
+        rightClickSound.play();
+        console.log("you clicked: ", id);
 
          if (this.state.current !== id) {
             this.stopHandler();

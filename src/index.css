@@ -1,8 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Permanent Marker", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: url("chopsticks.png"), auto;
@@ -14,9 +13,11 @@ code {
 }
 
 body {
-  background-color: #c8d6af;
+  background-color: #4d4d4d;
+  color: red;
 }
 
+/* #c8d6af */
 h1 {
   text-align: center;
   font-size: 55px;
@@ -33,9 +34,11 @@ p {
   text-align: center;
   padding: 0.8rem 2rem;
   margin: 1rem;
-  background-color: rgb(69, 66, 136);
+  background-color: red;
   color: white;
   border: none;
+  font-weight: bold;
+  border-radius: 29px;
 }
 
 #buttons {
@@ -74,11 +77,11 @@ p {
 }
 
 .green {
-  background-color: rgb(58, 92, 79);
+  background-color: rgb(58, 197, 53);
 }
 
 .cyan {
-  background-color: cyan;
+  background-color: rgb(101, 206, 206);
 }
 
 .circle span {
