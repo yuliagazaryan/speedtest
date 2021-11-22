@@ -134,14 +134,12 @@ p {
 }
 
 #gameover button {
-  position: relative;
-  bottom: 208px;
-  left: 565px;
   font-size: 20px;
   padding: 10px 15px;
   background-color: rgb(240, 86, 86);
   border: none;
   color: white;
+  float: right;
 }
 
 #buttons button:disabled {
