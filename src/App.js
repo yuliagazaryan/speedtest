@@ -7,10 +7,10 @@ import startSound from "./assets/gameStartSound.mp3"
 import clickSound from "./assets/rightClickSound.ogg"
 import endSound from "./assets/gameEndSound.mp3"
 
-let gameStartSound = new Audio(startSound);
 let rightClickSound = new Audio(clickSound);
 let gameEndSound = new Audio(endSound);
 
+rightClickSound.playbackRate = 1.8;
 
 const getRndInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -23,7 +23,7 @@ class App extends Component {
         gameOver: false,
         pace: 1500,
         rounds: 0,
-        gameStart: false,
+        gameStart: false
      };
 
      timer = undefined;
@@ -68,7 +68,6 @@ class App extends Component {
      };
 
      startHandler = () => {
-         gameStartSound.play();
         this.nextCircle();
         this.setState({
             gameStart: true,
@@ -76,7 +75,6 @@ class App extends Component {
      };
 
      stopHandler = () => {
-         gameStartSound.pause();
          gameEndSound.play();
         clearTimeout(this.timer);
 
